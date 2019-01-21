@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c482.View_Controller.ModifyProductController">
+    <children>
+      <HBox alignment="BOTTOM_RIGHT" layoutX="14.0" layoutY="14.0" prefHeight="69.0" prefWidth="206.0">
+         <children>
+            <Text fill="#065e84" strokeType="OUTSIDE" strokeWidth="0.0" text="Modify Product" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Pane layoutX="438.0" layoutY="279.0" prefHeight="184.0" prefWidth="459.0" style="-fx-border-radius: 2%; -fx-border-color: #065e84;">
+         <children>
+            <Button fx:id="modifyProductDeleteBtn" layoutX="367.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleModifyProductDelete" prefHeight="25.0" prefWidth="80.0" text="Delete" />
+            <TableView fx:id="modifyProductPartDeleteTableView" layoutX="12.0" layoutY="8.0" prefHeight="125.0" prefWidth="435.0">
+               <columns>
+                  <TableColumn fx:id="modifyProductPartIdDeleteColumn" prefWidth="95.99996948242188" text="Part ID" />
+                  <TableColumn fx:id="modifyProductPartNameDeleteColumn" prefWidth="93.99993896484375" text="Part Name" />
+                  <TableColumn fx:id="modifyProductPartStockDeleteColumn" prefWidth="110.6666259765625" text="Inventory Level" />
+                  <TableColumn fx:id="modifyProductPartPriceDeleteColumn" prefWidth="133.0" text="Price per Unit" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane layoutX="438.0" layoutY="38.0" prefHeight="226.0" prefWidth="459.0" style="-fx-border-radius: 2%; -fx-border-color: #065e84;">
+         <children>
+            <Button fx:id="modifyProductAddBtn" layoutX="370.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleModifyProductAdd" prefHeight="26.0" prefWidth="80.0" text="Add" />
+            <HBox layoutX="-70.0" layoutY="8.0" prefWidth="497.0">
+               <children>
+                  <Button fx:id="modifyProductSearchBtn" mnemonicParsing="false" onAction="#handleModifyProductSearch" prefHeight="26.0" prefWidth="78.0" text="Search">
+                     <HBox.margin>
+                        <Insets left="120.0" />
+                     </HBox.margin>
+                  </Button>
+                  <TextField fx:id="modifyProductSearchTextField" prefHeight="26.0" prefWidth="226.0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="clearProductAddPartSearchBtn" mnemonicParsing="false" onAction="#handleClearProductAddPartSearch" text="Clear" />
+               </children>
+            </HBox>
+            <TableView fx:id="modifyProductPartTableView" layoutX="15.0" layoutY="54.0" prefHeight="125.0" prefWidth="435.0">
+               <columns>
+                  <TableColumn fx:id="modifyProductPartIdAddColumn" prefWidth="95.99996948242188" text="Part ID" />
+                  <TableColumn fx:id="modifyProductPartNameAddColumn" prefWidth="93.99993896484375" text="Part Name" />
+                  <TableColumn fx:id="modifyProductPartStockAddColumn" prefWidth="110.6666259765625" text="Inventory Level" />
+                  <TableColumn fx:id="modifyProductPartPriceAddColumn" prefWidth="133.0" text="Price per Unit" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <GridPane layoutX="45.0" layoutY="135.0" prefHeight="314.0" prefWidth="363.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="59.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.60001220703128" minWidth="10.0" prefWidth="146.19998779296878" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.199951171875" minWidth="10.0" prefWidth="43.00002441406252" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.60003662109375" minWidth="10.0" prefWidth="108.5999755859375" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <Text layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" GridPane.rowIndex="1" />
+            <Text layoutX="10.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inv" GridPane.rowIndex="2" />
+            <Text layoutX="10.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" GridPane.rowIndex="3" />
+            <Text layoutX="10.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max" GridPane.rowIndex="4" />
+            <TextField fx:id="modifyProductIdTextField" disable="true" editable="false" promptText="Autogenerated" GridPane.columnIndex="1" />
+            <TextField fx:id="modifyProductNameTextField" layoutX="110.0" layoutY="12.0" promptText="Product Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="modifyProductInvTextField" layoutX="110.0" layoutY="43.0" promptText="Inventory Level" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="modifyProductPriceTextField" layoutX="110.0" layoutY="73.0" promptText="Price" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="modifyProductMaxTextField" layoutX="110.0" layoutY="104.0" promptText="Max Inventory" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Text layoutX="10.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <TextField fx:id="modifyProductMinTextField" prefHeight="26.0" prefWidth="118.0" promptText="Min Inventory" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <HBox layoutX="726.0" layoutY="474.0" prefHeight="26.0" prefWidth="170.0">
+         <children>
+            <Button fx:id="modifyProductSaveBtn" mnemonicParsing="false" onAction="#handleModifyProductSave" prefHeight="25.0" prefWidth="74.0" text="Save">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Button>
+            <Button fx:id="modifyProductCancelBtn" mnemonicParsing="false" onAction="#handleModifyProductCancel" prefHeight="25.0" prefWidth="74.0" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
